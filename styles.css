@@ -742,44 +742,76 @@ a { color: inherit; text-decoration: none; }
   padding: 110px 0 130px;
 }
 
-.applications .section-head { max-width: 1400px; margin-left: auto; margin-right: auto; }
-.applications .index { color: var(--black); opacity: 0.55; }
-.applications .section-head h2 { color: var(--black); }
+.applications .section-head {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.applications .index {
+  color: var(--black);
+  opacity: 0.55;
+}
+
+.applications .section-head h2 {
+  color: var(--black);
+}
+
+/* INTRO */
 .app-intro {
   max-width: 46ch;
   padding: 0 var(--gutter);
+
   font-size: 16px;
-  color: rgba(10,10,10,0.7);
+  line-height: 1.5;
+
+  color: rgba(10, 10, 10, 0.7);
+
   margin-bottom: 56px;
+
+  /* posición para escritorio */
   margin-left: 285px;
   margin-right: auto;
 }
 
-/* Grid de Bootstrap: g-col-12 en móvil, 5/7 desde lg */
+
+/* CONTENEDOR PRINCIPAL */
 .app-grid {
   --bs-gap: 64px;
+
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--gutter);
+
   align-items: center;
 }
 
+
+/* TELÉFONO */
 .phone-frame {
   border: 10px solid var(--black);
   border-radius: 34px;
   overflow: hidden;
+
+  width: 100%;
   max-width: 300px;
+
   aspect-ratio: 9 / 19.5;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+
+  margin: 0 auto;
 }
 
 .phone-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+
+/* TEXTO DEL LADO */
 .app-side {
   display: flex;
   flex-direction: column;
@@ -789,27 +821,266 @@ a { color: inherit; text-decoration: none; }
 .app-note {
   display: flex;
   gap: 16px;
-  border-top: 1px solid rgba(10,10,10,0.25);
+
+  border-top: 1px solid rgba(10, 10, 10, 0.25);
+
   padding-top: 18px;
 }
 
 .app-note-num {
   font-family: var(--display);
   font-size: 15px;
+
   color: var(--black);
   opacity: 0.55;
+
+  flex-shrink: 0;
 }
 
 .app-note p {
   font-size: 15px;
-  color: rgba(10,10,10,0.8);
+  line-height: 1.5;
+
+  color: rgba(10, 10, 10, 0.8);
+
   max-width: 42ch;
+  margin: 0;
 }
+
+
+/* =========================================
+   TABLET
+   ========================================= */
 
 @media (max-width: 991px) {
-  .phone-frame { margin: 0 auto; }
+
+  .app-intro {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 46ch;
+  }
+
+  .app-grid {
+    grid-template-columns: 1fr !important;
+    gap: 60px;
+  }
+
+  .phone-frame {
+    grid-column: 1 / -1 !important;
+
+    width: min(100%, 300px);
+    margin: 0 auto;
+  }
+
+  .app-side {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+  }
 }
 
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .applications {
+    padding: 70px 0 90px;
+  }
+
+  .applications .section-head {
+    padding: 0 var(--gutter);
+  }
+
+  .app-intro {
+    width: auto;
+    max-width: none;
+
+    margin: 35px 0 50px;
+
+    padding: 0 var(--gutter);
+
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .app-grid {
+    display: grid;
+    grid-template-columns: 1fr !important;
+
+    gap: 55px;
+
+    width: 100%;
+    padding: 0 var(--gutter);
+  }
+
+  .phone-frame {
+    width: min(75vw, 280px);
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    border-width: 8px;
+    border-radius: 28px;
+  }
+
+  .app-side {
+    width: 100%;
+    gap: 30px;
+  }
+
+  .app-note {
+    gap: 12px;
+  }
+
+  .app-note p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+}
+/* ---------- NO HACER --------- */
+
+.no-hacer {
+  background: var(--black);
+  color: var(--bone);
+
+  padding: 110px 0 130px;
+}
+
+
+/* TÍTULO */
+
+.no-hacer .section-head {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  margin-bottom: 55px;
+}
+
+.no-hacer .section-head .index {
+  color: var(--bone);
+  opacity: 0.55;
+}
+
+.no-hacer .section-head h2 {
+  color: var(--bone);
+}
+
+
+/* TEXTO INTRODUCTORIO */
+
+.no-hacer-copy {
+  max-width: 46ch;
+
+  padding: 0 var(--gutter);
+
+  margin: 0 auto 70px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: rgba(245, 242, 234, 0.65);
+}
+
+
+/* =========================================
+   GRID
+   ========================================= */
+
+.no-grid {
+  width: 100%;
+  max-width: 700px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 70px;
+}
+
+
+/* Cada bloque tiene exactamente el mismo tamaño */
+.no-item {
+  width: 100%;
+  overflow: hidden;
+  background: var(--black);
+}
+
+
+/* Las dos imágenes son iguales */
+.no-item img {
+  display: block;
+
+  width: 100%;
+  height: 450px;
+
+  object-fit: cover;
+}
+
+
+/* Texto debajo de cada imagen */
+.no-item p {
+  margin: 0;
+
+  padding: 20px 0 0;
+
+  font-size: 15px;
+  line-height: 1.5;
+
+  color: rgba(245, 242, 234, 0.7);
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 991px) {
+
+  .no-grid {
+    max-width: 650px;
+    padding: 0 var(--gutter);
+
+    gap: 55px;
+  }
+
+  .no-item img {
+    height: 400px;
+  }
+}
+
+
+/* =========================================
+   CELULAR
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .no-grid {
+    width: 100%;
+    max-width: none;
+
+    padding: 0 var(--gutter);
+
+    gap: 45px;
+  }
+
+  .no-item img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .no-item p {
+    font-size: 14px;
+    line-height: 1.5;
+
+    padding-top: 15px;
+  }
+}
 /* ---------- CLOSING ---------- */
 .closing {
   position: relative;
